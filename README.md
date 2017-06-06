@@ -38,4 +38,4 @@ Redis:
 
     Can also test with:
     
-        $ redis-cli - h {IPAddress}
+        $ redis-cli -h {IPAddress}
