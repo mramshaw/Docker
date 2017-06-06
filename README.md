@@ -21,6 +21,8 @@ Redis:
 
         $ sudo docker inspect rediswebserver | grep -i ipaddress
         
+        [Note the IPAddress for use below.]
+        
     Test redis 'ping" with:
     
         http://{IPAddress}:5000/
@@ -33,3 +35,7 @@ Redis:
         
         Result: key1 = "value1"
                 key2 does not exist
+
+    Can also test with:
+    
+        $ redis-cli - h {IPAddress}
