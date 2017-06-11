@@ -1,4 +1,4 @@
-#Redis
+Run a containerized redis server, query with a containerized Go webserver or redis-cli
 
     In console A)
 
