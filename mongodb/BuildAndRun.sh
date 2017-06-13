@@ -2,7 +2,8 @@
 
 if [ $EUID -ne 0 ]
 then
-    echo "This script should be run as the root user or else using 'sudo'"
+    # redirect the error message to Std Err
+    echo "This script should be run as the root user or else using 'sudo'" 1>&2
     exit 1
 fi
 
