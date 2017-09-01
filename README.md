@@ -24,6 +24,28 @@ COPY will simply copy the file, without uncompressing it (usually this is what's
 
 If unsure, use COPY.
 
+## Useful Shortcuts
+
+Substitute the Option key for the Ctrl key on OSX.
+
+#### Detach from a container (but leave it running)
+
+It's not always convenient or possible to set up another terminal:
+
+	Ctrl-P followed by Ctrl-Q
+
+For instance, when running in a Cloud Shell.
+
+To reattach to the running container:
+
+	$ docker attach xxxxxxxxxxxx
+
+#### Exit a container
+
+Slightly faster than typing `exit`:
+
+	Ctrl-D
+
 ## Useful Commands
 
 One or two useful Docker commands.
@@ -45,6 +67,16 @@ One or two useful Docker commands.
 	$ docker images
 
 	$ docker rmi ...
+
+#### Tag Image:
+
+Docker images are generally tagged __latest__ by default.
+
+As each succesive __latest__ image is built, it usually leaves behind an unnamed orphan image. Use __rmi__ (see above) to delete these.
+
+To tag an image with a version number (in this case 1.1):
+
+	$ docker tag xxx/yyy xxx/yyy:1.1
 
 #### Layer information about the Docker image:
 
