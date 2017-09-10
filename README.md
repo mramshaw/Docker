@@ -26,7 +26,7 @@ If unsure, use COPY.
 
 ## Useful Shortcuts
 
-Substitute the Option key for the Ctrl key on OSX.
+[Substitute the Option key for the Ctrl key on OSX.]
 
 #### Detach from a container (but leave it running)
 
@@ -68,6 +68,14 @@ One or two useful Docker commands.
 
 	$ docker rmi ...
 
+#### Search Images:
+
+This can be significantly faster than searching DockerHub (or any other repository) manually:
+
+	$ docker search rediswebserver
+
+Official builds will show first.
+
 #### Tag Image:
 
 Docker images are generally tagged __latest__ by default.
@@ -83,6 +91,10 @@ To tag an image with a version number (in this case 1.1):
 	$ docker history ...
 
 	$ docker history --no-trunc ...
+
+#### Docker logs:
+
+	$ docker logs xxxxxxxxxxxx
 
 #### Docker volumes:
 
