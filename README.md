@@ -26,7 +26,7 @@ If unsure, use COPY.
 
 ## Useful Shortcuts
 
-[Substitute the Option key for the Ctrl key on OSX.]
+[The usual practice on OS/X is to substitute the Option key for the Ctrl key; these are terminal commands, so don't.]
 
 #### Detach from a container (but leave it running)
 
