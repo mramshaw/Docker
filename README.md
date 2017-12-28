@@ -58,6 +58,8 @@ One or two useful Docker commands.
 
 	$ docker stats
 
+As usual, Ctrl-C to stop.
+
 #### Processes:
 
 	$ docker ps
