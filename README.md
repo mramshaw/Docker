@@ -54,6 +54,10 @@ One or two useful Docker commands.
 
 	$ docker info
 
+#### Current information about Docker runtime:
+
+	$ docker stats
+
 #### Processes:
 
 	$ docker ps
