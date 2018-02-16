@@ -10,7 +10,7 @@ Various __orchestration__ services are available, but all of the cloud providers
 
 ## Best Practices
 
-Create a __.dockerfile__ (essentially the same thing as a __.gitignore__ file) and list everything that Docker doesn't need to see in it (for instance __.git__ and __.gitignore__ as well as any __passwords__ or __secrets__). This can also save some transfer time in certain cases, such as when there is a lot of test data or source files.
+Create a __.dockerignore__ file (essentially the same thing as a __.gitignore__ file) and list everything that Docker doesn't need to see in it (for instance __.git/__ and __.gitignore__ as well as any __passwords__ or __secrets__). This can also save some transfer time in certain cases, such as when there is a lot of test data or source files.
 
 In order to run an apples-to-apples comparison when testing, do __NOT__ do either an __apt-get update__ or an __apk --update__. The reason for this is that these will make subtle changes to the operating systems that may well invalidate any test comparisons.
 
