@@ -53,6 +53,15 @@ Of course, for production use, these are strongly recommended for security reaso
 Consider specifying __USER nobody__ unless __root__ access is absolutely required.
 [Hint: it is almost never actually required.]
 
+#### Tag all images
+
+The default tag is __latest__ but it is a really terrible practice to use this. For one thing
+using it means being vulnerable to new releases (not generally a good idea) - and can also
+have a big impact in terms of having to actually download the latest release.
+
+For consistency reason, always tag Docker images - and only ever use tagged images. This will
+at least give you the option of actually __testing__ the latest release.
+
 ## ADD versus COPY
 
 ADD will uncompress certain files (.tar, .tar.gz, .tar.bz2) if only a destination directory
@@ -129,7 +138,7 @@ Official builds will show first.
 
 Docker images are generally tagged __latest__ by default.
 
-As each succesive __latest__ image is built, it usually leaves behind an unnamed orphan image.
+As each successive __latest__ image is built, it usually leaves behind an unnamed orphan image.
 Use __rmi__ (see above) to delete these.
 
 To tag an image with a version number (in this case 1.1):
