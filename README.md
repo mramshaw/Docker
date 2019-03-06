@@ -59,7 +59,7 @@ The default tag is __latest__ but it is a really terrible practice to use this. 
 using it means being vulnerable to new releases (not generally a good idea) - and can also
 have a big impact in terms of having to actually download the latest release.
 
-For consistency reason, always tag Docker images - and only ever use tagged images. This will
+For consistency reasons, always tag Docker images - and only ever use tagged images. This will
 at least give you the option of actually __testing__ the latest release.
 
 ## ADD versus COPY
