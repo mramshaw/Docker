@@ -58,8 +58,8 @@ image (such as __Node.js__ or __Python__ or __Golang__).
  [chroot jails](http://en.wikipedia.org/wiki/Chroot).]
 
 And I record this decision in a __Dockerfile__ (there are other ways of
-doing this but this just happens to by ___my___ way). This allows for
-simple and repeatable builds.
+doing this but we are discussing ___my___ process). Using a Dockerfile
+allows for simple and repeatable builds.
 
 Then I add my application's dependencies. And then I add my application.
 
