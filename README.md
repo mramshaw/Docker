@@ -22,11 +22,12 @@ prototyping purposes it is a great tool.
 
 ## Terminology
 
-I had been using Docker for a couple of years when I was asked what was the
-difference between a __container__ and an __image__. And to be honest, I had
-completely forgotten (it's like being asked whether you start walking with your
-right foot or your left - most people just do it). So, in case someone tries to
-trick ___you___ with this question, here is my definition:
+I had been using Docker for years when I was asked what was the difference
+between a __container__ and an __image__. And to be honest, I had completely
+forgotten (it's like being asked whether you start walking with your right foot
+or your left - most people just do it. Or which came first, the chicken or the
+egg?). So, in case someone tries to trick ___you___ with this question, here is
+my definition:
 
 > A Docker __container__ wraps one or more Docker __images__ into an invisible
 > box with everything needed to run an application.
@@ -55,6 +56,10 @@ image (such as __Node.js__ or __Python__ or __Golang__).
 [Docker base images are generally linux-based, as the technology is based
  upon Linux Containers - which were themselves based upon
  [chroot jails](http://en.wikipedia.org/wiki/Chroot).]
+
+And I record this decision in a __Dockerfile__ (there are other ways of
+doing this but this just happens to by ___my___ way). This allows for
+simple and repeatable builds.
 
 Then I add my application's dependencies. And then I add my application.
 
