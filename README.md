@@ -20,6 +20,50 @@ can be learned by starting with [docker-compose](https://docs.docker.com/compose
 However, the limitations of this approach quickly become apparent, but for
 prototyping purposes it is a great tool.
 
+## Terminology
+
+I had been using Docker for a couple of years when I was asked what was the
+difference between a __container__ and an __image__. And to be honest, I had
+completely forgotten (it's like being asked whether you start walking with your
+right foot or your left - most people just do it). So, in case someone tries to
+trick ___you___ with this question, here is my definition:
+
+> A Docker __container__ wraps one or more Docker __images__ into an invisible
+> box with everything needed to run an application.
+
+[This is from an operating system point of view; from an application point of
+ view, it is of course your responsibility to add all of the software components
+ needed to run your application.]
+
+In general, the base image corresponds to a linux operating system (such as
+Debian or Ubuntu) - or, in the case of a language image, all of the language
+components layered on top of a linux operating system.
+
+[Note that __DOCKER__ itself will handle the operating system issues, which
+ means that linux Docker images can be run on a MacBook or a Windows desktop,
+ as long as an appropriate version of Docker has been installed.]
+
+## Process
+
+I was also asked about my Docker ___process___.
+
+My personal Docker process is to start by selecting a ___Base image___ (all
+other software layers will be layered on top of this image). My chosen base
+might be __Ubuntu__ or __Debian__ or __Alpine__, or - commonly - a language
+image (such as __Node.js__ or __Python__ or __Golang__).
+
+[Docker base images are generally linux-based, as the technology is based
+ upon Linux Containers - which were themselves based upon
+ [chroot jails](http://en.wikipedia.org/wiki/Chroot).]
+
+Then I add my application's dependencies. And then I add my application.
+
+I will normally ___build___ my application in Docker (perhaps using a
+___buildbot___) and also ___test it___ in Docker. If these succeed, then
+I leave my application up and running.
+
+There are variations on this theme, but that's generally my process.
+
 ## Best Practices
 
 The following are some suggested best practices:
