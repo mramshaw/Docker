@@ -46,7 +46,9 @@ base image (make a note of which one - it will be important).
 My personal Docker process is to start by selecting a ___Base image___ (all
 subsequent software layers will then be layered on top of this image). This
 base image might be __Alpine__, __CentOS__, __Debian__, __Ubuntu__ or even
-a language image such as __Node.js__ or __Python__ or __Golang__.
+a language image such as __Node.js__ or __Python__ or __Golang__ (these are
+simply my usual choices and of course are not the only options - in fact the
+available choices for a base Docker image are pretty much endless).
 
 Generally, you should pick whichever linux distro you know best, unless you
 decide to go with a language option - in which case the choice will probably
