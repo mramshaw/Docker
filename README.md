@@ -22,27 +22,24 @@ prototyping purposes it is a great tool.
 
 ## Terminology
 
-I had been using Docker for years when I was asked what was the difference
-between a __container__ and an __image__. And to be honest, I had completely
-forgotten (it's like being asked whether you start walking with your right foot
-or your left - most people just do it. Or which came first, the chicken or the
-egg?). So, in case someone tries to trick ___you___ with this question, here is
-my definition:
+Docker itself is not too hard to learn and use, but in case you are ever asked
+the difference between a __container__ and an __image__, here is my definition:
 
-> A Docker __container__ wraps one or more Docker __images__ into an invisible
-> box with everything needed to run an application.
+> A Docker __container__ wraps one or more Docker __images__ into a process
+> with everything needed to run an application.
 
-[This is from an operating system point of view; from an application point of
- view, it is of course your responsibility to add all of the software components
- needed to run your application.]
+[This is from an ___operating system___ point of view; from an ___application___
+ point of view, it is of course your responsibility to add all of the software
+ components needed to run your application.]
 
-In general, the base image corresponds to a linux operating system (such as
-Debian or Ubuntu) - or, in the case of a language image, all of the language
-components layered on top of a linux operating system.
+In general, the base image will correspond to a \*nix operating system (such
+as CentOS) or a language (such as Node.js). In the case of a language image,
+all of the language components will be layered on top of a (probably) linux
+base image (make a note of which one - it will be important).
 
 [Note that __DOCKER__ itself will handle the operating system issues, which
- means that linux Docker images can be run on a MacBook or a Windows desktop,
- as long as an appropriate version of Docker has been installed.]
+ means that \*nix Docker images can be run on any hardware (such as a MacBook
+ or Windows desktop) for which a version of Docker can been installed.]
 
 ## Process
 
