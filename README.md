@@ -46,22 +46,25 @@ components layered on top of a linux operating system.
 
 ## Process
 
-I was also asked about my Docker ___process___.
-
 My personal Docker process is to start by selecting a ___Base image___ (all
-other software layers will be layered on top of this image). My chosen base
-might be __Ubuntu__ or __Debian__ or __Alpine__, or - commonly - a language
-image (such as __Node.js__ or __Python__ or __Golang__).
+subsequent software layers will then be layered on top of this image). This
+base image might be __Alpine__, __CentOS__, __Debian__, __Ubuntu__ or even
+a language image such as __Node.js__ or __Python__ or __Golang__.
+
+Generally, you should pick whichever linux distro you know best, unless you
+decide to go with a language option - in which case the choice will probably
+be obvious. If unsure which to pick, __CentOS__ is probably a safe choice.
 
 [Docker base images are generally linux-based, as the technology is based
  upon Linux Containers - which were themselves based upon
  [chroot jails](http://en.wikipedia.org/wiki/Chroot).]
 
-And I record this decision in a __Dockerfile__ (there are other ways of
-doing this but we are discussing ___my___ process). Using a Dockerfile
-allows for simple and repeatable builds.
+And I record this decision in a __Dockerfile__ (my preference is to always
+use a __Dockerfile__ as they allow for simple and repeatable builds).
 
-Then I add my application's dependencies. And then I add my application.
+Then I add my application's dependencies.
+
+And then I add my application.
 
 I will normally ___build___ my application in Docker (perhaps using a
 ___buildbot___) and also ___test it___ in Docker. If these succeed, then
