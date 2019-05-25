@@ -31,13 +31,15 @@ The contents are as follows:
 * [Process](#process)
 * [Best Practices](#best-practices)
     * [.dockerignore](#dockerignore)
-    * [apt-get update / apk --update](#apt-get-update-apk-update)
+    * [FROM scratch](#from-scratch)
+    * [apt-get update / apk --update](#apt-get-update--apk--update)
     * [sort dependencies](#sort-dependencies)
     * [root access](#root-access)
     * [Tag all images](#tag-all-images)
 * [ADD versus COPY](#add-versus-copy)
 * [Useful Shortcuts](#useful-shortcuts)
     * [Detach from a container (but leave it running)](#detach-from-a-container-but-leave-it-running)
+    * [Exit a container](#exit-a-container)
 * [Useful Commands](#useful-commands)
     * [General information about Docker and the Docker runtime](#general-information-about-docker-and-the-docker-runtime)
     * [Current information about Docker runtime](#current-information-about-docker-runtime)
@@ -87,6 +89,9 @@ be obvious. If unsure which to pick, __CentOS__ is probably a safe choice.
  upon Linux Containers - which were themselves based upon
  [chroot jails](http://en.wikipedia.org/wiki/Chroot).]
 
+In very rare situations I may decide to build [FROM scratch](#from-scratch),
+for instance if I am simply distributiong a pre-built binary.
+
 And I record this decision in a __Dockerfile__ (my preference is to always
 use a __Dockerfile__ as they allow for simple and repeatable builds).
 
@@ -118,6 +123,22 @@ Create recursive wildcard patterns as follows:
     **/*.pyc
 
 [In this case, all .obj or .pyc files - in _any_ folder - will be ignored by Docker.]
+
+#### FROM scratch
+
+In some circumstances you may wish to build your container starting from an empty image.
+
+[This is unusual but it is possible to think of many use cases where this would be desirable.]
+
+The syntax for doing this is:
+
+```
+FROM scratch
+```
+
+You can read the documentation for this option here:
+
+    http://docs.docker.com/samples/library/scratch/
 
 #### apt-get update / apk --update
 
