@@ -23,6 +23,32 @@ can be learned by starting with [docker-compose](https://docs.docker.com/compose
 However, the limitations of this approach quickly become apparent, but for
 prototyping purposes it is a great tool.
 
+## Contents
+
+The contents are as follows:
+
+* [Terminology](#terminology)
+* [Process](#process)
+* [Best Practices](#best-practices)
+    * [.dockerignore](#dockerignore)
+    * [apt-get update / apk --update](#apt-get-update-apk-update)
+    * [sort dependencies](#sort-dependencies)
+    * [root access](#root-access)
+    * [Tag all images](#tag-all-images)
+* [ADD versus COPY](#add-versus-copy)
+* [Useful Shortcuts](#useful-shortcuts)
+    * [Detach from a container (but leave it running)](#detach-from-a-container-but-leave-it-running)
+* [Useful Commands](#useful-commands)
+    * [General information about Docker and the Docker runtime](#general-information-about-docker-and-the-docker-runtime)
+    * [Current information about Docker runtime](#current-information-about-docker-runtime)
+    * [Processes](#processes)
+    * [Images](#images)
+    * [Search Images](#search-images)
+    * [Tag Image](#tag-image)
+    * [Layer information about the Docker image](#layer-information-about-the-docker-image)
+    * [Docker logs](#docker-logs)
+    * [Docker volumes](#docker-volumes)
+
 ## Terminology
 
 Docker itself is not too hard to learn and use, but in case you are ever asked
@@ -101,6 +127,15 @@ will make subtle changes to the operating systems that may well invalidate any t
 comparisons.
 
 Of course, for production use, these are strongly recommended for security reasons.
+
+#### sort dependencies
+
+This is so obvious that it almost goes without saying, but when installing dependencies
+with __apt-get__ or __apk__ take the time to sort them alphabetically (or in some other
+order if that makes more sense).
+
+Large numbers of dependencies can be hard to scan, so sorting them can make it easier
+to see what dependencies are being installed.
 
 #### root access
 
