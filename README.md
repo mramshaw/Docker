@@ -32,7 +32,7 @@ The contents are as follows:
 * [Best Practices](#best-practices)
     * [.dockerignore](#dockerignore)
     * [FROM scratch](#from-scratch)
-    * [apt-get update / apk --update](#apt-get-update--apk--update)
+    * [apt-get update / apk --update](#apt-get-update--apk---update)
     * [sort dependencies](#sort-dependencies)
     * [root access](#root-access)
     * [Tag all images](#tag-all-images)
@@ -44,6 +44,7 @@ The contents are as follows:
     * [General information about Docker and the Docker runtime](#general-information-about-docker-and-the-docker-runtime)
     * [Current information about Docker runtime](#current-information-about-docker-runtime)
     * [Processes](#processes)
+    * [Visibility into containers](#visibility-into-containers)
     * [Images](#images)
     * [Search Images](#search-images)
     * [Tag Image](#tag-image)
@@ -226,6 +227,38 @@ As usual, Ctrl-C to stop.
 	$ docker ps -qa
 
 	$ docker rm ...
+
+#### Visibility into containers
+
+See into running containers with <kbd>docker top</kbd>.
+
+Start a container:
+
+```bash
+$ docker run --name example -it busybox sh
+/ #
+```
+
+Detach from this container (but leave it running) with <kbd>Ctrl-P<kbd> followed by <kbd>Ctrl-Q</kbd>.
+
+To see what the container is running:
+
+```bash
+$ docker top example
+UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
+root                9795                9777                0                   20:21               pts/0               00:00:00            sh
+$
+```
+
+And clean up:
+
+```bash
+$ docker kill example
+example
+$ docker rm example
+example
+$
+```
 
 #### Images:
 
