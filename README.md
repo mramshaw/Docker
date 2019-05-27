@@ -91,10 +91,10 @@ be obvious. If unsure which to pick, __CentOS__ is probably a safe choice.
  [chroot jails](http://en.wikipedia.org/wiki/Chroot).]
 
 In very rare situations I may decide to build [FROM scratch](#from-scratch),
-for instance if I am simply distributiong a pre-built binary.
+for instance if I am simply distributing a pre-built binary.
 
-And I record this decision in a __Dockerfile__ (my preference is to always
-use a __Dockerfile__ as they allow for simple and repeatable builds).
+And I record the base image decision in a __Dockerfile__ (my preference is to
+always use a __Dockerfile__ as they allow for simple and repeatable builds).
 
 Then I add my application's dependencies.
 
