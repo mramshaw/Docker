@@ -118,6 +118,11 @@ __.git/__ and __.gitignore__ as well as any __passwords__ or __secrets__). This 
 save some transfer time in certain cases, such as when there is a lot of test data or
 source files.
 
+Interestingly, Docker doesn't normally need to see the __.dockerignore__ file, so the
+first entry in this file should be:
+
+    .dockerignore
+
 Create recursive wildcard patterns as follows:
 
     **/*.obj
