@@ -23,6 +23,17 @@ can be learned by starting with [docker-compose](https://docs.docker.com/compose
 However, the limitations of this approach quickly become apparent, but for
 prototyping purposes it is a great tool.
 
+Even so, Docker functions as an introduction to modern methodology such as
+the [Twelve-factor App](http://12factor.net/processes).
+
+> __Twelve-factor processes are stateless and share-nothing.__
+
+[This accords well with [Microservices](http://github.com/mramshaw/microservices) thinking.]
+
+__Nota bene__:
+
+> Sticky sessions are a violation of twelve-factor and should never be used or relied upon.
+
 ## Contents
 
 The contents are as follows:
@@ -71,7 +82,7 @@ base image (make a note of which one - it will be important).
 
 [Note that __DOCKER__ itself will handle the operating system issues, which
  means that \*nix Docker images can be run on any hardware (such as a MacBook
- or Windows desktop) for which a version of Docker can been installed.]
+ or Windows desktop) for which a version of Docker can be installed.]
 
 ## Process
 
@@ -219,7 +230,7 @@ One or two useful Docker commands.
 
 	$ docker info
 
-#### Current information about Docker runtime:
+#### Current information about the Docker runtime:
 
 	$ docker stats
 
@@ -280,7 +291,38 @@ This can be significantly faster than searching [DockerHub](https://hub.docker.c
 
 [Replace `rediswebserver` with whatever software is of interest.]
 
-Official builds will show first.
+Official builds will show first. By default only __25__ images will be shown, but
+this is usually more than enough. The __STARS__ column is particularly helpful:
+
+```bash
+$ docker search redis --no-trunc
+NAME                             DESCRIPTION                                                                            STARS               OFFICIAL            AUTOMATED
+redis                            Redis is an open source key-value store that functions as a data structure server.     6978                [OK]
+bitnami/redis                    Bitnami Redis Docker Image                                                             113                                     [OK]
+sameersbn/redis                                                                                                         75                                      [OK]
+grokzen/redis-cluster            Redis cluster 3.0, 3.2, 4.0 & 5.0                                                      48
+kubeguide/redis-master           redis-master with "Hello World!"                                                       29
+rediscommander/redis-commander   Alpine image for redis-commander - Redis management tool.                              24                                      [OK]
+redislabs/redis                  Clustered in-memory database engine compatible with open source Redis by Redis Labs    20
+arm32v7/redis                    Redis is an open source key-value store that functions as a data structure server.     15
+redislabs/redisearch             Redis With the RedisSearch module pre-loaded. See http://redisearch.io                 15
+oliver006/redis_exporter          Prometheus Exporter for Redis Metrics. Supports Redis 2.x, 3.x, 4.x and 5.x           10
+webhippie/redis                  Docker images for Redis                                                                10                                      [OK]
+s7anley/redis-sentinel-docker    Redis Sentinel                                                                         8                                       [OK]
+insready/redis-stat              Docker image for the real-time Redis monitoring tool redis-stat                        7                                       [OK]
+arm64v8/redis                    Redis is an open source key-value store that functions as a data structure server.     6
+redislabs/redisgraph             A graph database module for Redis                                                      5                                       [OK]
+centos/redis-32-centos7          Redis in-memory data structure store, used as database, cache and message broker       4
+bitnami/redis-sentinel           Bitnami Docker Image for Redis Sentinel                                                4                                       [OK]
+frodenas/redis                   A Docker Image for Redis                                                               2                                       [OK]
+circleci/redis                   CircleCI images for Redis                                                              2                                       [OK]
+wodby/redis                      Redis container image with orchestration                                               2                                       [OK]
+kilsoo75/redis-master            This image is for the redis master of SK CloudZ                                        1
+tiredofit/redis                  Redis Server w/ Zabbix monitoring and S6 Overlay based on Alpine                       1                                       [OK]
+cflondonservices/redis           Docker image for running redis                                                         0
+xetamus/redis-resource           forked redis-resource                                                                  0                                       [OK]
+$
+```
 
 #### Tag Image:
 
