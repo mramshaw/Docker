@@ -1,5 +1,7 @@
 # Docker
 
+![Docker icon](images/Docker-R-Logo-08-2018-Monochomatic-RGB_Moby-x1.png)
+
 In terms of the __Cloud__, learning [Docker](https://www.docker.com/) is a
 great first step.
 
